@@ -22,8 +22,12 @@
 //    rectDown.origin.y += 100;
 //    self.view.bounds = rectDown;
     CGRect rect = self.view.bounds;
+    NSLog(@"%f", self.view.bounds.size.width);
+    NSLog(@"%f", self.view.bounds.size.height);
+    
     self.scrollView = [[MyScrollView alloc] initWithFrame:rect];
     self.scrollView.backgroundColor = [UIColor lightGrayColor];
+    self.scrollView.contentSize = CGSizeMake(500, 1000);
     
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveScrollView:)];
     
@@ -43,8 +47,6 @@
     [self.scrollView addSubview:greenView];
     [self.scrollView addSubview:blueView];
     [self.scrollView addSubview:yellowView];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,10 +58,28 @@
     if (sender.state == UIGestureRecognizerStateChanged) {
         CGPoint translation= [sender translationInView:self.view];
         CGRect rect = self.scrollView.bounds;
-        rect.origin.y += translation.y;
+        rect.origin.x -= translation.x;
+        rect.origin.y -= translation.y;
+        
+        if (rect.origin.x < self.view.bounds.size.width / 2 - self.scrollView.contentSize.width / 2) {
+            rect.origin.x = self.view.bounds.size.width / 2 - self.scrollView.contentSize.width / 2;
+        }
+        if (rect.origin.x > self.scrollView.contentSize.width / 2 -  self.view.bounds.size.width / 2) {
+            rect.origin.x = self.scrollView.contentSize.width / 2 -  self.view.bounds.size.width / 2;
+        }
+        
+        if (rect.origin.y < self.view.bounds.size.height / 2 - self.scrollView.contentSize.height / 2) {
+            rect.origin.y = self.view.bounds.size.height / 2 - self.scrollView.contentSize.height / 2;
+        }
+        if (rect.origin.y > self.scrollView.contentSize.height / 2 -  self.view.bounds.size.height / 2) {
+            rect.origin.y = self.scrollView.contentSize.height / 2 -  self.view.bounds.size.height / 2;
+        }
+        
         self.scrollView.bounds = rect;
     }
-    NSLog(@"%f", self.scrollView.bounds.origin.y);
+    
+    NSLog(@"x - %f", self.scrollView.bounds.origin.x);
+    NSLog(@"y - %f", self.scrollView.bounds.origin.y);
 }
 
 @end
