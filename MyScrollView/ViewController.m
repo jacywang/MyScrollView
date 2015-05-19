@@ -17,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    CGRect rectDown = self.view.bounds;
+    rectDown.origin.y += 100;
+    self.view.bounds = rectDown;
+    
     UIView *redView = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 100, 100)];
     redView.backgroundColor = [UIColor redColor];
     UIView *greenView = [[UIView alloc] initWithFrame:CGRectMake(150, 150, 150, 200)];
@@ -30,6 +34,8 @@
     [self.view addSubview:greenView];
     [self.view addSubview:blueView];
     [self.view addSubview:yellowView];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
