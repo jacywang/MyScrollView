@@ -14,6 +14,7 @@
 		9CA64FE71B0B97CC00812F6F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CA64FE61B0B97CC00812F6F /* Images.xcassets */; };
 		9CA64FEA1B0B97CC00812F6F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CA64FE81B0B97CC00812F6F /* LaunchScreen.xib */; };
 		9CA64FF61B0B97CC00812F6F /* MyScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA64FF51B0B97CC00812F6F /* MyScrollViewTests.m */; };
+		9CA650011B0B9F3300812F6F /* MyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA650001B0B9F3300812F6F /* MyScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		9CA64FEF1B0B97CC00812F6F /* MyScrollViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyScrollViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA64FF41B0B97CC00812F6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CA64FF51B0B97CC00812F6F /* MyScrollViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScrollViewTests.m; sourceTree = "<group>"; };
+		9CA64FFF1B0B9F3300812F6F /* MyScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScrollView.h; sourceTree = "<group>"; };
+		9CA650001B0B9F3300812F6F /* MyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				9CA64FDE1B0B97CC00812F6F /* AppDelegate.m */,
 				9CA64FE01B0B97CC00812F6F /* ViewController.h */,
 				9CA64FE11B0B97CC00812F6F /* ViewController.m */,
+				9CA64FFF1B0B9F3300812F6F /* MyScrollView.h */,
+				9CA650001B0B9F3300812F6F /* MyScrollView.m */,
 				9CA64FE31B0B97CC00812F6F /* Main.storyboard */,
 				9CA64FE61B0B97CC00812F6F /* Images.xcassets */,
 				9CA64FE81B0B97CC00812F6F /* LaunchScreen.xib */,
@@ -220,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CA64FE21B0B97CC00812F6F /* ViewController.m in Sources */,
+				9CA650011B0B9F3300812F6F /* MyScrollView.m in Sources */,
 				9CA64FDF1B0B97CC00812F6F /* AppDelegate.m in Sources */,
 				9CA64FDC1B0B97CC00812F6F /* main.m in Sources */,
 			);
@@ -344,6 +350,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MyScrollView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,6 +361,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MyScrollView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
